@@ -12,12 +12,10 @@ All numbers in the elves' list are in feet. How many total square feet of wrappi
 def calculate_area(text):
     area = 0
     values = text.split('x')
-    for x in values:
-        l = int(values[0])
-        w = int(values[1])
-        h = int(values[2])
-        area = area + (2*l*w + 2*w*h + 2*h*l + l*w)
-        
+    l = int(values[0])
+    w = int(values[1])
+    h = int(values[2])
+    area = (2*l*w + 2*w*h + 2*h*l + l*w)        
     return area
 
 feet_area = 0
@@ -31,8 +29,6 @@ with open("02_input.txt", "r") as file:
         elif not text: 
             break
         
-    meter_area = feet_area*0.092903   
     print("The total surface of paper in square feet is: ", feet_area)
-    print("The total surface of paper in square meter is: ", meter_area)
 
 file.close()
