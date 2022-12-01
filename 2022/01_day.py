@@ -39,7 +39,7 @@ cal = 0
 # Don't append the last value
 '''f = open("01_input1.txt", "r")
 for x in f:
-    if(x!='\n' and x!=''):
+    if(x!='\n'):
         cal = cal+int(x)       
     else:
         rations.append(cal)
