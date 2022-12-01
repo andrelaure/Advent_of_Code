@@ -33,21 +33,37 @@ def print_cal(arr):
     for x in arr:
         print(x)
 
-
 rations = []
 cal = 0
-f = open("01_input1.txt", "r")
+
+# Don't append the last value
+'''f = open("01_input1.txt", "r")
 for x in f:
-    if(x!='\n'):
+    if(x!='\n' and x!=''):
         cal = cal+int(x)       
     else:
         rations.append(cal)
-        cal=0
-        
+        cal=0'''
 
-#rations.sort(reverse=True)
+
+text = open("01_input1.txt", "r")
+
+while True:
+    line = text.readline()
+    if(line!='\n' and line!=''):
+        cal = cal+int(line) 
+    elif not line: 
+        rations.append(cal)
+        break
+    else:
+        rations.append(cal)
+        cal=0
+
+text.close()
+
+rations.sort(reverse=True)
 print_cal(rations)
-#print("Highest total Calories carried by an Elf: ", rations[0])
+print("Highest total Calories carried by an Elf is: ", rations[0])
 
 
 '''--- Part Two ---
@@ -59,6 +75,6 @@ In the example above, the top three Elves are the fourth Elf (with 24000 Calorie
 
 Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?'''
 
-#Top3Cal = rations[0]+rations[1]+rations[2]
+Top3Cal = rations[0]+rations[1]+rations[2]
 
-#print("Total calories carried by top 3 Elves is: ", Top3Cal)
+print("Total Calories carried by top 3 Elves is: ", Top3Cal)
