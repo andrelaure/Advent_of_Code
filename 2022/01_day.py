@@ -37,7 +37,7 @@ rations = []
 cal = 0
 
 # Don't append the last value
-'''f = open("01_input1.txt", "r")
+'''f = open("01_input.txt", "r")
 for x in f:
     if(x!='\n'):
         cal = cal+int(x)       
@@ -46,7 +46,7 @@ for x in f:
         cal=0'''
 
 
-text = open("01_input1.txt", "r")
+text = open("01_input.txt", "r")
 
 while True:
     line = text.readline()
