@@ -33,7 +33,69 @@ What would your total score be if everything goes exactly according to your stra
 #   draw     3pt
 #   lost     0pt
 
+# first part
+def first_part(comand):
+    points = 0
+    if (comand[0] == "A"):
+        if(comand[1] == "X"):
+            points = points + (1 + 3)
+        elif(comand[1] == "Y"):
+            points = points + (2 + 6)
+        else:
+            points = points + (3 + 0)
+            
+    if (comand[0] == "B"):
+        if(comand[1] == "X"):
+            points = points + (1 + 0)
+        elif(comand[1] == "Y"):
+            points = points + (2 + 3)
+        else:
+            points = points + (3 + 6)
+    
+    if (comand[0] == "C"):
+        if(comand[1] == "X"):
+            points = points + (1 + 6)
+        elif(comand[1] == "Y"):
+            points = points + (2 + 0)
+        else:
+            points = points + (3 + 3)
+    
+    return points
+
+
+#second part
+def second_part(comand):
+    real_points = 0
+    if (comand[0] == "A"):
+        if(comand[1] == "X"):
+            real_points = real_points + (3 + 0)
+        elif(comand[1] == "Y"):
+            real_points = real_points + (1 + 3)
+        else:
+            real_points = real_points + (2 + 6)
+            
+    if (comand[0] == "B"):
+        if(comand[1] == "X"):
+            real_points = real_points + (1 + 0)
+        elif(comand[1] == "Y"):
+            real_points = real_points + (2 + 3)
+        else:
+            real_points = real_points + (3 + 6)
+    
+    if (comand[0] == "C"):
+        if(comand[1] == "X"):
+            real_points = real_points + (2 + 0)
+        elif(comand[1] == "Y"):
+            real_points = real_points + (3 + 3)
+        else:
+            real_points = real_points + (1 + 6)
+    
+    return real_points
+
+
+#main
 points = 0
+real_points = 0
 
 with open("02_input.txt", "r") as file:   
     text = file.read()
@@ -41,38 +103,14 @@ with open("02_input.txt", "r") as file:
 
     count = 0
     for x in line:
-        if(x!='\n' and x!=''):
-            comand = line[count].split(" ")          
-            count = count+1
+        comand = line[count].split(" ")          
+        count = count+1
 
-            if (comand[0] == "A"):
-                if(comand[1] == "X"):
-                    points = points + (1 + 3)
-                elif(comand[1] == "Y"):
-                    points = points + (2 + 6)
-                else:
-                    points = points + (3 + 0)
-            
-            if (comand[0] == "B"):
-                if(comand[1] == "X"):
-                    points = points + (1 + 0)
-                elif(comand[1] == "Y"):
-                    points = points + (2 + 3)
-                else:
-                    points = points + (3 + 6)
-            
-            if (comand[0] == "C"):
-                if(comand[1] == "X"):
-                    points = points + (1 + 6)
-                elif(comand[1] == "Y"):
-                    points = points + (2 + 0)
-                else:
-                    points = points + (3 + 3)
-        
-        elif not line: 
-            break
-
+        points = points + first_part(comand)
+        real_points = real_points + second_part(comand)
+     
     print("My total points are: ", points)
+    print("My real total points (second part) is: ", real_points)
 
 file.close()
 
@@ -87,3 +125,16 @@ In the third round, you will defeat your opponent's Scissors with Rock for a sco
 Now that you're correctly decrypting the ultra top secret strategy guide, you would get a total score of 12.
 
 Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?'''
+
+#   A   Rock    1pt
+#   B   Paper   2pt
+#   C   Scissors    3pt
+
+#   X   need to lose
+#   Y   need to draw
+#   Z   need to win
+
+#   win      6pt
+#   draw     3pt
+#   lost     0pt
+
