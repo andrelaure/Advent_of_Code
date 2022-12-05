@@ -125,11 +125,6 @@ with open("03_input.txt", "r") as file:
             if (check_rep[x] == 3):
                 priority_group = priority_group + alpha.index(x)+1
                 break
-        
-        print("3 righe:\n", group)
-
-        print(check_rep)
-
-        print("priority group: ", priority_group)
-
-        print("iter", iter)
+ 
+    print("The sum of all priority groups is: ", priority_group)
+file.close()
