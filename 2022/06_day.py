@@ -9,7 +9,7 @@ with open ("06_input.txt", "r") as file:
         while x in result:
             result = result[1:]
         result += x
-        if (len(result) == 4):
+        if (len(result) == 14):
             print("numeber of char processed: ", times)
             break
 
