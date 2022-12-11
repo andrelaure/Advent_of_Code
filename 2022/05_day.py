@@ -15,19 +15,8 @@ def move_stacks(instr, mat, flag):
         l = len(mat[end_stack-1])
         for x in range(rep_num):
             popped = mat[start_stack-1].pop()
-            print(l)
-            mat[end_stack-1].insert(l, popped)
-        '''aux = []
-        for x in range(rep_num):
-            popped = mat[start_stack-1].pop()
-            aux.append(popped)
-        for x in aux:
-            popped = aux.pop()
-            mat[end_stack-1].append(popped)'''
-        
-        
+            mat[end_stack-1].insert(l, popped)   
 
-    print (mat)
     return mat
 
 
@@ -100,3 +89,4 @@ with open("05_input.txt", "r") as file:
 
               
     print_top_stack(mat)
+file.close()
