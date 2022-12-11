@@ -56,15 +56,13 @@ with open("04_input.txt", "r") as file:
             pairs = x.split('-')
             for y in pairs:
                 num.append(int(y))
+
         if (num[0]<=num[2] and num[1]>=num[3]) or (num[0]>=num[2] and num[1]<=num[3]):
             fully_contain = fully_contain + 1
-            overlap = overlap + 1            
-        elif(num[0]<=num[2]):
-            if(num[1]>=num[2]):
-                overlap = overlap + 1
-        else:
-            if(num[0]<=num[3]):
-                overlap = overlap + 1
+            #overlap = overlap + 1         
+        print(num)
+        if(num[1]>=num[2] and num[0]<=num[3]):
+            overlap += 1
         
 
     print("The total assignemnt fully contain in other is: ", fully_contain)
