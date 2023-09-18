@@ -1,0 +1,14 @@
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.AssemblyInfoInputs.cache
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.AssemblyInfo.cs
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.csproj.CoreCompileInputs.cache
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\bin\Debug\net7.0\AdventCode.exe
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\bin\Debug\net7.0\AdventCode.deps.json
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\bin\Debug\net7.0\AdventCode.runtimeconfig.json
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\bin\Debug\net7.0\AdventCode.dll
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\bin\Debug\net7.0\AdventCode.pdb
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.dll
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\refint\AdventCode.dll
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.pdb
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\AdventCode.genruntimeconfig.cache
+C:\Users\andrea\Desktop\Advent_of_Code\2022\AdventCode\obj\Debug\net7.0\ref\AdventCode.dll
