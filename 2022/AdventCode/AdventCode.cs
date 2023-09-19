@@ -5,10 +5,11 @@ class AdventCode
 {
     static void Main()
     {
-        //Day_08.Main08();
+        Console.Write("Day 08 in esecuzione:\n");
+        Day_08.Main08();
 
-        Console.Write("Day 09 in esecuzione:\n");
-        Day_09.Main09();
+        /*Console.Write("Day 09 in esecuzione:\n");
+        Day_09.Main09();*/
     }
 
     public static void printIntRow(int[] row){

@@ -16,6 +16,7 @@
 
 using System;
 using System.IO;
+using System.Reflection.Metadata;
 
 class Day_08
 {
@@ -43,8 +44,17 @@ class Day_08
 
         //AdventCode.printIntMatrix(bitforest);
         TreeWatcher_Vertical(ref counter, ref bitforest, forest);
-        Console.Write("counter: ");
-        Console.Write(counter);
+        Console.Write("counter: " + counter + "\n");
+
+        //part 2
+
+        //per ogni albero devo contare gli alberi visibili da esso (moltiplico gli alberi visibili per lato)
+        //quindi escludo i bordi
+        //crare variabili correnti record
+        int treeHouse_record = 1;
+        //scorro tutta la matrice??? in ordine così non ho bisogno di bitmatrix
+        HouseSearch(ref treeHouse_record, forest);
+        Console.Write("casetta con vista sul Duomo: " + treeHouse_record + "\n");
     }
 
     static void TreeWatcher_Horizontal(int[] row, ref int counter, int i, ref int[,] bitforest){
@@ -128,5 +138,55 @@ class Day_08
                     break;
             }
         }       
+    }
+
+    static void HouseSearch(ref int treeHouse_record, int[,] forest){
+        int curr_tree = 0;
+        for (int i=0; i<99; i++){
+            for (int j=0; j<99; j++){
+                if (i == 0 || i == 98 || j == 0 || j == 98)
+                    continue;
+                int tree_counter = 0;
+                curr_tree = forest[i,j];
+
+                for (int k = i+1; k<99; k++){
+                    tree_counter ++;
+                    if (curr_tree <= forest[k, j])
+                        break;
+                    /*if (curr_tree > forest[k, j])
+                        tree_counter ++;
+                    else
+                        break;*/
+                }
+                //tree_counter++;
+                treeHouse_record *= tree_counter;
+                tree_counter = 0;
+
+                for (int k = i-1; k>=0; k--){
+                    tree_counter ++;
+                    if (curr_tree <= forest[k, j])
+                        break;                   
+                }
+                //tree_counter++;
+                treeHouse_record *= tree_counter;
+                tree_counter = 0;
+
+                for (int z = j+1; z<99; z++){
+                    tree_counter++;
+                    if (curr_tree <= forest[i, z])
+                        break;
+                }
+                //tree_counter++;
+                treeHouse_record *= tree_counter;
+                tree_counter = 0;
+                for (int z = j-1; z>=0; z--){
+                    tree_counter ++;
+                    if (curr_tree <= forest[i, z])
+                        break;                    
+                }
+                //tree_counter++;
+                treeHouse_record *= tree_counter;
+            }
+        }
     }
 }
