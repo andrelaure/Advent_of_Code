@@ -1,19 +1,3 @@
-
-//costruire matrice nxn con n= 99
-//evitare controlli sui valori perimetrali (x,y) --> (0,?) - (98,?) - (?,0) - (?,98)
-//costruire bitmap di supporto per alberi visitati
-//if curr_tree = 0 && not in perimeter then skip ()
-//if curr_tree = 9 skip all other trees
-
-//costruisco prima matrice riga per riga e posso fare già conteggio alberi dx->sx e sx->dx
-
-//bitforest:    bitmap matrix
-//forest:       dynamic matrix
-//counter:      integer  -- if non ancora considerato then contuer ++
-//curr_tree: integer
-//heighest_tree: integer
-
-
 using System;
 using System.IO;
 using System.Reflection.Metadata;
@@ -48,11 +32,8 @@ class Day_08
 
         //part 2
 
-        //per ogni albero devo contare gli alberi visibili da esso (moltiplico gli alberi visibili per lato)
-        //quindi escludo i bordi
-        //crare variabili correnti record
         int treeHouse_record = 1;
-        //scorro tutta la matrice??? in ordine così non ho bisogno di bitmatrix
+        
         HouseSearch(ref treeHouse_record, forest);
         Console.Write("casetta con vista sul Duomo: " + treeHouse_record + "\n");
     }
@@ -146,6 +127,9 @@ class Day_08
             for (int j=0; j<99; j++){
                 if (i == 0 || i == 98 || j == 0 || j == 98)
                     continue;
+                
+                
+                int curr_record = 1;
                 int tree_counter = 0;
                 curr_tree = forest[i,j];
 
@@ -159,7 +143,7 @@ class Day_08
                         break;*/
                 }
                 //tree_counter++;
-                treeHouse_record *= tree_counter;
+                curr_record *= tree_counter;
                 tree_counter = 0;
 
                 for (int k = i-1; k>=0; k--){
@@ -168,7 +152,7 @@ class Day_08
                         break;                   
                 }
                 //tree_counter++;
-                treeHouse_record *= tree_counter;
+                curr_record *= tree_counter;
                 tree_counter = 0;
 
                 for (int z = j+1; z<99; z++){
@@ -177,7 +161,7 @@ class Day_08
                         break;
                 }
                 //tree_counter++;
-                treeHouse_record *= tree_counter;
+                curr_record *= tree_counter;
                 tree_counter = 0;
                 for (int z = j-1; z>=0; z--){
                     tree_counter ++;
@@ -185,7 +169,12 @@ class Day_08
                         break;                    
                 }
                 //tree_counter++;
-                treeHouse_record *= tree_counter;
+                curr_record *= tree_counter;
+
+
+                if (curr_record > treeHouse_record) {
+                    treeHouse_record = curr_record;
+                }
             }
         }
     }

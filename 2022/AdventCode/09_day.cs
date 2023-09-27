@@ -34,16 +34,16 @@ class Day_09
         for (int i=0; i<lines.Count(); i++){
             switch (commands[i]){
                 case 'L':
-                    Move_Left(ref visited, ref H_position, ref T_position, distances[i], 2);
+                    Move_Left(ref visited, ref H_position, ref T_position, distances[i]);
                     break;
                 case 'R':
-                    Move_Right(ref visited, ref H_position, ref T_position, distances[i], 2);
+                    Move_Right(ref visited, ref H_position, ref T_position, distances[i]);
                     break;
                 case 'U':
-                    Move_Up(ref visited, ref H_position, ref T_position, distances[i], 2);
+                    Move_Up(ref visited, ref H_position, ref T_position, distances[i]);
                     break;
                 case 'D':
-                    Move_Down(ref visited, ref H_position, ref T_position, distances[i], 2);
+                    Move_Down(ref visited, ref H_position, ref T_position, distances[i]);
                     break;
             }
         }
@@ -63,16 +63,16 @@ class Day_09
                 T_position = snake[j+1];
                 switch (commands[i]){
                     case 'L':
-                        Move_Left(ref visited, ref H_position, ref T_position, distances[i], 2);
+                        Move_Left(ref visited, ref H_position, ref T_position, distances[i]);
                         break;
                     case 'R':
-                        Move_Right(ref visited, ref H_position, ref T_position, distances[i], 2);
+                        Move_Right(ref visited, ref H_position, ref T_position, distances[i]);
                         break;
                     case 'U':
-                        Move_Up(ref visited, ref H_position, ref T_position, distances[i], 2);
+                        Move_Up(ref visited, ref H_position, ref T_position, distances[i]);
                         break;
                     case 'D':
-                        Move_Down(ref visited, ref H_position, ref T_position, distances[i], 2);
+                        Move_Down(ref visited, ref H_position, ref T_position, distances[i]);
                         break;
                 }
             }
@@ -81,13 +81,13 @@ class Day_09
         Console.Write("positions visited by Tail (10 knots): " + visited.Count +"\n");
     }
 
-    static void Move_Left(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist, int limit){
+    static void Move_Left(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist){
         for (int i=0; i<dist; i++){
             H_position.Item1 --;
-            if (Math.Abs(T_position.Item1 - H_position.Item1) < limit && Math.Abs(T_position.Item2 - H_position.Item2) < limit)
+            if (Math.Abs(T_position.Item1 - H_position.Item1) < 2 && Math.Abs(T_position.Item2 - H_position.Item2) < 2)
                 continue;
 
-            if (Math.Abs(T_position.Item1 - H_position.Item1) == limit){
+            if (Math.Abs(T_position.Item1 - H_position.Item1) == 2){
                 if(T_position.Item2 == H_position.Item2)
                     T_position.Item1 --;
                 else{
@@ -104,13 +104,13 @@ class Day_09
         }
     }
 
-    static void Move_Right(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist, int limit){
+    static void Move_Right(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist){
         for (int i=0; i<dist; i++){
             H_position.Item1 ++;
-            if (Math.Abs(T_position.Item1 - H_position.Item1) < limit && Math.Abs(T_position.Item2 - H_position.Item2) < limit)
+            if (Math.Abs(T_position.Item1 - H_position.Item1) < 2 && Math.Abs(T_position.Item2 - H_position.Item2) < 2)
                 continue;
 
-            if (Math.Abs(T_position.Item1 - H_position.Item1) == limit){
+            if (Math.Abs(T_position.Item1 - H_position.Item1) == 2){
                 if(T_position.Item2 == H_position.Item2)
                     T_position.Item1 ++;
                 else{
@@ -127,13 +127,13 @@ class Day_09
         }
     }
 
-    static void Move_Up(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist, int limit){
+    static void Move_Up(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist){
         for (int i=0; i<dist; i++){
             H_position.Item2 ++;
-            if (Math.Abs(T_position.Item1 - H_position.Item1) < limit && Math.Abs(T_position.Item2 - H_position.Item2) < limit)
+            if (Math.Abs(T_position.Item1 - H_position.Item1) < 2 && Math.Abs(T_position.Item2 - H_position.Item2) < 2)
                 continue;
 
-            if (Math.Abs(T_position.Item2 - H_position.Item2) == limit){
+            if (Math.Abs(T_position.Item2 - H_position.Item2) == 2){
                 if(T_position.Item1 == H_position.Item1)
                     T_position.Item2 ++;
                 else{
@@ -150,13 +150,13 @@ class Day_09
         }
     }
 
-    static void Move_Down(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist, int limit){
+    static void Move_Down(ref Dictionary<(int,int), bool> visited, ref (int,int) H_position, ref (int,int) T_position, int dist){
         for (int i=0; i<dist; i++){
             H_position.Item2 --;
-            if (Math.Abs(T_position.Item1 - H_position.Item1) < limit && Math.Abs(T_position.Item2 - H_position.Item2) < limit)
+            if (Math.Abs(T_position.Item1 - H_position.Item1) < 2 && Math.Abs(T_position.Item2 - H_position.Item2) < 2)
                 continue;
 
-            if (Math.Abs(T_position.Item2 - H_position.Item2) == limit){
+            if (Math.Abs(T_position.Item2 - H_position.Item2) == 2){
                 if(T_position.Item1 == H_position.Item1)
                     T_position.Item2 --;
                 else{
