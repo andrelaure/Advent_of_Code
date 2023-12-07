@@ -26,12 +26,10 @@ class Day02{
         }
         
         //part 1
-        Console.Write("Somma degli IDs: ");
-        Console.WriteLine(IDsum);
+        Console.WriteLine($"La somma degli ID è: {IDsum}");
 
         //part 2
-        Console.Write("La potenza dei cubi è: ");
-        Console.WriteLine(cubePower);
+        Console.WriteLine($"La potenza dei cubi è: {cubePower}");
     }
 
      

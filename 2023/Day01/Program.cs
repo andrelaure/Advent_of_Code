@@ -26,7 +26,7 @@ class Day01{
          
         //calibrationValue = PartOne(lines);
         calibrationValue = PartTwo(lines);
-        Console.WriteLine("Calibration Value: " + calibrationValue);
+        Console.WriteLine($"Calibration Value: {calibrationValue}");
     }
 
 
