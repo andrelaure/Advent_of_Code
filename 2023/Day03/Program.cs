@@ -11,11 +11,11 @@ class Day03{
         string[] lines = File.ReadAllLines(file_path);  
         var MATRIX_SYM = new HashSet<(int, int)>();
 
-        int sum = PartOne(lines, MATRIX_SYM);
-        //int sum = PartTwo(lines, MATRIX_SYM);
+        //int sum = PartOne(lines, MATRIX_SYM);
+        int sum = PartTwo(lines, MATRIX_SYM);
 
-        Console.WriteLine($"Somma PartOne: {sum}"); 
-        //Console.WriteLine($"Somma PartTwo: {sum}"); 
+        //Console.WriteLine($"Somma PartOne: {sum}"); 
+        Console.WriteLine($"Somma PartTwo: {sum}"); 
     }
 
     private static int PartOne(string[] lines, HashSet<(int, int)> MATRIX_SYM){
@@ -46,13 +46,13 @@ class Day03{
 
     private static int PartTwo(string[] lines, HashSet<(int, int)> MATRIX_SYM){
         int sum = 0;
-        int mul = 1;
-        int counter = 0;
         int[] ultimaPosizione = {-1,-1};
         for (int j=0; j<lines.Length; j++){ 
             for (int i=0; i<lines[j].Length; i++){
                 if (lines[j][i] == '*'){
                     MATRIX_SYM.Add((j,i));
+                    int mul = 1;
+                    int counter = 0;
 
                     for (int x= j-1; x<=j+1; x++){ 
                         for (int y= i-1; y<=i+1; y++){
@@ -70,8 +70,6 @@ class Day03{
                     if (counter == 2){
                         sum += mul;
                     }
-                    mul = 1;
-                    counter = 0;
                 }
             }
         }

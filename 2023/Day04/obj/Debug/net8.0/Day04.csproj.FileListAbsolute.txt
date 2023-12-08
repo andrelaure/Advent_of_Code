@@ -1,0 +1,15 @@
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.AssemblyInfoInputs.cache
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.AssemblyInfo.cs
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.csproj.CoreCompileInputs.cache
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.sourcelink.json
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\bin\Debug\net8.0\Day04.exe
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\bin\Debug\net8.0\Day04.deps.json
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\bin\Debug\net8.0\Day04.runtimeconfig.json
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\bin\Debug\net8.0\Day04.dll
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\bin\Debug\net8.0\Day04.pdb
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.dll
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\refint\Day04.dll
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.pdb
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\Day04.genruntimeconfig.cache
+C:\Users\andrea\Desktop\Advent_of_Code\2023\Day04\obj\Debug\net8.0\ref\Day04.dll
