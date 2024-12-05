@@ -1,5 +1,5 @@
 
-def read_file():
+def ReadFile():
     with open('01_Input.txt', 'r') as file:
         row = file.readlines()
     return row
@@ -7,7 +7,7 @@ def read_file():
 #---------------------------------------------------------
 
 # MAIN
-row = read_file()
+row = ReadFile()
 ListA = []
 ListB = []
 
