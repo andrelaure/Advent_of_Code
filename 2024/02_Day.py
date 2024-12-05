@@ -22,7 +22,8 @@ records = read_file()
 validRecords = 0
 for record in records:
     levels = list(map(int, record.split()))
-    if is_safe(levels) or is_safe_p2(levels):
+    #if is_safe(levels):
+    if is_safe_p2(levels):
         validRecords += 1
 print (validRecords)
 
