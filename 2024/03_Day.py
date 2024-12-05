@@ -5,64 +5,42 @@ def read_file():
         row = file.readlines()
     return row
 
-
-def mul_expression(records, mul_pattern):
-    mul_exp = []
-    numbers = []
-    total = 0
-
-    for record in records:
-        mul_exp += re.findall(mul_pattern, record)
-
-    num_pattern = r"\d{1,3}"
-    for mul in mul_exp:
-        numbers += re.findall(num_pattern, mul)
-        if len(numbers) == 2 : 
-            total += int(numbers[0]) * int(numbers[1])
-            numbers.clear()
-    
-    return total
-
-def mul_do_expression(records, mul_do_pattern):
+def Expression(records, pattern):
     mul_exp = []
     numbers = []
     total = 0
     do = True
 
-    #part_1
-    #for record in records:
-    #    mul_exp += re.findall(mul_do_pattern, record)
-
-    #part_2
     for record in records:
-        mul_exp += re.findall(mul_do_pattern)
-    
-    #solo per part_2
-    #mettere una funzione che prenda mul_exp e mantenga solo i numeri che seguono do() o il primo numero incontrato
+        mul_exp += re.findall(pattern, record)
 
-    num_pattern = r"\d{1,3}"
+    num_pattern = r"\d{1,3}|do|don\'t"
     for mul in mul_exp:
-        numbers += re.findall(num_pattern, mul)
-        if len(numbers) == 2 : 
-            total += int(numbers[0]) * int(numbers[1])
-            numbers.clear()
+        if mul == "do()" : do = True
+        elif mul == "don't()" : do = False
+        else:
+            if do : numbers += re.findall(num_pattern, mul)
+            if len(numbers) == 2 : 
+                total += int(numbers[0]) * int(numbers[1])
+                numbers.clear()
     
     return total
-
 
 #-------------------------------------------------------------------------------
 #MAIN
 
 records = read_file()
-mul_pattern = r"mul\(\d{1,3},\d{1,3}\)"
-do_pattern = r"mul\(\d{1,3},\d{1,3}\)|do\(\)|don\'t\(\)"
+#row = ["xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))"]
 
 #part_1
-#total = mul_expression(records, mul_pattern)
+mul_pattern = r"mul\(\d{1,3},\d{1,3}\)"
+mul_total = Expression(records, mul_pattern)
 
 #part_2
-total = mul_do_expression(records, do_pattern)
+do_pattern = r"mul\(\d{1,3},\d{1,3}\)|do\(\)|don\'t\(\)"
+do_total = Expression(records, do_pattern)
 
-print (total)
+print(mul_total)
+print(do_total)
 
 #END   
