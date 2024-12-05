@@ -3,15 +3,15 @@ def read_file():
         row = file.readlines()
     return row
 
-def is_safe(report):
-    increasing = all(1 <= report[i + 1] - report[i] <= 3 for i in range(len(report) - 1))
-    decreasing = all(1 <= report[i] - report[i + 1] <= 3 for i in range(len(report) - 1))
+def is_safe(level):
+    increasing = all(1 <= level[i + 1] - level[i] <= 3 for i in range(len(level) - 1))
+    decreasing = all(1 <= level[i] - level[i + 1] <= 3 for i in range(len(level) - 1))
     return increasing or decreasing
 
-def is_safe_p2(report):
-    for i in range(len(report)):
-        modified_report = report[:i] + report[i+1:]
-        if is_safe(modified_report):
+def is_safe_p2(level):
+    for i in range(len(level)):
+        mod_lvl = level[:i] + level[i+1:]
+        if is_safe(mod_lvl):
             return True
     return False
 
