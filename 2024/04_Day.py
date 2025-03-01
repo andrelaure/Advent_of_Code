@@ -17,6 +17,31 @@ def ScanXmas(sample):
                     count += 1
     return count
 
+
+#part_1
+def FindXmas(sample, i, j):
+    count = 0
+    directions = [(-1, -1),(-1, 0),(-1, 1),  
+                  (0, -1),         (0, 1),   
+                  (1, -1), (1, 0), (1, 1)]  
+    
+    for dx, dy in directions:
+        if CheckXmas(sample, i, j, dx, dy, "XMAS") : count += 1
+    return False
+
+def CheckXmas(sample, i, j, dx, dy, xmas):
+    for k, char in enumerate(xmas):
+        ni, nj = i + k * dx, j + k * dy
+        if not IsValid(sample, ni, nj) or sample[ni][nj] != char : return False
+    return True
+
+def IsValid(sample, i, j):
+    return 0 <= i < len(sample) and 0 <= j < len(sample[i])
+
+
+#-------------------------------
+
+
 #part_2
 def CheckXPattern(sample, i, j):
     diagonals = [
@@ -41,29 +66,6 @@ def CheckDiagonal(sample, i, j, diagonal):
             if not IsValid(sample, ni, nj) or sample[ni][nj] != 'M' : return False
         
     return True
-
-#-------------------------------
-#part_1
-def FindXmas(sample, i, j):
-    count = 0
-    directions = [(-1, -1),(-1, 0),(-1, 1),  
-                  (0, -1),         (0, 1),   
-                  (1, -1), (1, 0), (1, 1)]  
-    
-    for dx, dy in directions:
-        if CheckXmas(sample, i, j, dx, dy, "XMAS") : count += 1
-    return False
-
-def CheckXmas(sample, i, j, dx, dy, xmas):
-    for k, char in enumerate(xmas):
-        ni, nj = i + k * dx, j + k * dy
-        if not IsValid(sample, ni, nj) or sample[ni][nj] != char : return False
-    return True
-
-def IsValid(sample, i, j):
-    return 0 <= i < len(sample) and 0 <= j < len(sample[i])
-
-
 
 #-------------------------------------------------------------------------------
 #MAIN
